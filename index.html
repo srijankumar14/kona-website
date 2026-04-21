@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kona — Little worlds for little hands</title>
+<link rel="icon" href="assets/kona-logo.png" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,30..100;1,9..144,300..700,30..100&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Caveat:wght@400..700&family=JetBrains+Mono:wght@400;500&family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="src/styles.css" />
+
+<!-- React + Babel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="src/Nav.jsx" type="text/babel"></script>
+<script src="src/Hero.jsx" type="text/babel"></script>
+<script src="src/PlayAlive.jsx" type="text/babel"></script>
+<script src="src/Worlds.jsx" type="text/babel"></script>
+<script src="src/Story.jsx" type="text/babel"></script>
+<script src="src/Promise.jsx" type="text/babel"></script>
+<script src="src/Waitlist.jsx" type="text/babel"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useRef } = React;
+
+function App() {
+  const [tweaks, setTweaks] = useState({
+    vibe: 'modern',
+    heroStyle: 'fullbleed',
+    cardStyle: 'pinned',
+    sparkle: 'on',
+  });
+
+  useEffect(() => {
+    document.body.className = `vibe-${tweaks.vibe}`;
+  }, [tweaks]);
+
+  // Scroll reveal
+  useEffect(() => {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.kona-app > section').forEach(s => {
+      s.classList.add('kona-reveal');
+      io.observe(s);
+    });
+    return () => io.disconnect();
+  }, []);
+
+  // Sparkle cursor
+  useEffect(() => {
+    if (tweaks.sparkle !== 'on') return;
+    let last = 0;
+    const colors = ['#F5B731', '#C97356', '#0F8B6E', '#FFE9A8'];
+    const onMove = (e) => {
+      const now = Date.now();
+      if (now - last < 80) return;
+      last = now;
+      const s = document.createElement('div');
+      s.className = 'kona-sparkle';
+      const color = colors[Math.floor(Math.random()*colors.length)];
+      s.innerHTML = `<svg viewBox="0 0 14 14" fill="${color}"><path d="M7 0 L8.4 5.6 L14 7 L8.4 8.4 L7 14 L5.6 8.4 L0 7 L5.6 5.6 Z"/></svg>`;
+      s.style.left = (e.clientX - 7 + (Math.random()*12 - 6)) + 'px';
+      s.style.top = (e.clientY - 7 + (Math.random()*12 - 6)) + 'px';
+      document.body.appendChild(s);
+      setTimeout(() => s.remove(), 1100);
+    };
+    window.addEventListener('mousemove', onMove);
+    return () => window.removeEventListener('mousemove', onMove);
+  }, [tweaks.sparkle]);
+
+  return (
+    <div className={`kona-app vibe-${tweaks.vibe}`}>
+      <Nav vibe={tweaks.vibe} />
+      <Hero vibe={tweaks.vibe} heroStyle={tweaks.heroStyle} />
+      <Worlds vibe={tweaks.vibe} cardStyle={tweaks.cardStyle} />
+      <Story vibe={tweaks.vibe} />
+      <Promise_ vibe={tweaks.vibe} />
+      <Waitlist vibe={tweaks.vibe} />
+      <Footer vibe={tweaks.vibe} />
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
