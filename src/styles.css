@@ -1154,7 +1154,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 /* ============ WAITLIST ============ */
 .kona-waitlist {
   position: relative;
-  background: #FFF5E0 url('assets/waitlist-bg.png') center center / cover no-repeat;
+  background: #FFF5E0 url('../assets/waitlist-bg.png') center center / cover no-repeat;
   color: var(--ink);
   padding: 0;
   min-height: 100vh;
