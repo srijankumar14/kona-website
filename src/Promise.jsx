@@ -1,97 +1,99 @@
-/* Section 5: The Kona Promise — 4 vertical cards on coral */
+/* Section 5: The Kona Promise — illustrated split layout */
 
 const PROMISES = [
   {
     n: '01',
-    title: 'Played with,\nnot just played once',
+    title: 'Played with, not just played once',
     detail: 'Toys built for the long haul — weighty, made to survive bedtime battles and breakfast reunions.',
-    icon: 'hands',
+    color: '#4A8C6A',
+    icon: (
+      <svg viewBox="0 0 44 44" fill="none" width="44" height="44">
+        <path d="M22 36 C12 36 6 28 6 22 C6 16 10 10 22 8 C34 10 38 16 38 22 C38 28 32 36 22 36Z" stroke="#4A8C6A" strokeWidth="1.8" strokeLinecap="round" fill="none" strokeDasharray="2 1.5"/>
+        <path d="M15 22 Q 22 28 29 22" stroke="#4A8C6A" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+        <circle cx="16" cy="18" r="1.5" fill="#4A8C6A"/>
+        <circle cx="28" cy="18" r="1.5" fill="#4A8C6A"/>
+      </svg>
+    ),
   },
   {
     n: '02',
-    title: 'Fun first.\nEverything else follows.',
+    title: 'Fun first. Everything else follows.',
     detail: 'Joy comes first. The learning sneaks in quietly — through building, breaking, and building again.',
-    icon: 'smile',
+    color: '#C97356',
+    icon: (
+      <svg viewBox="0 0 44 44" fill="none" width="44" height="44">
+        <path d="M22 6 L25 16 L36 16 L27 23 L30 34 L22 27 L14 34 L17 23 L8 16 L19 16 Z" stroke="#C97356" strokeWidth="1.8" strokeLinejoin="round" fill="none" strokeDasharray="2 1.5"/>
+      </svg>
+    ),
   },
   {
     n: '03',
-    title: 'Simple to start.\nSurprising to stay.',
-    detail: 'Easy enough to start at three. Interesting enough to still surprise at eight.',
-    icon: 'spiral',
+    title: 'Simple to start. Surprising to stay.',
+    detail: 'Easy enough at three. Interesting enough to still surprise at eight.',
+    color: '#4A8C6A',
+    icon: (
+      <svg viewBox="0 0 44 44" fill="none" width="44" height="44">
+        <rect x="10" y="10" width="24" height="24" rx="5" stroke="#4A8C6A" strokeWidth="1.8" strokeDasharray="2 1.5" fill="none"/>
+        <rect x="16" y="16" width="12" height="12" rx="3" stroke="#4A8C6A" strokeWidth="1.5" fill="none"/>
+      </svg>
+    ),
   },
   {
     n: '04',
-    title: 'Something worth\nshowing you.',
+    title: 'Something worth showing you.',
     detail: "The kind of finish line that ends with a small face saying, 'Look!'",
-    icon: 'star',
+    color: '#C97356',
+    icon: (
+      <svg viewBox="0 0 44 44" fill="none" width="44" height="44">
+        <circle cx="22" cy="14" r="5" stroke="#C97356" strokeWidth="1.8" fill="none" strokeDasharray="2 1.5"/>
+        <path d="M22 19 L22 30" stroke="#C97356" strokeWidth="1.8" strokeLinecap="round"/>
+        <path d="M14 26 Q 22 36 30 26" stroke="#C97356" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+        <path d="M14 38 Q 22 42 30 38" stroke="#C97356" strokeWidth="1.8" strokeLinecap="round" fill="none"/>
+      </svg>
+    ),
   },
 ];
-
-function PromiseIcon({ type }) {
-  const common = { width: 28, height: 28, viewBox: '0 0 28 28', fill: 'none', 'aria-hidden': true };
-  if (type === 'hands') {
-    return (
-      <svg {...common}>
-        <path d="M6 18 Q 6 10 14 10 Q 22 10 22 18 L22 22 Q 14 26 6 22 Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"/>
-        <path d="M10 10 V 5 M14 10 V 3 M18 10 V 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
-      </svg>
-    );
-  }
-  if (type === 'smile') {
-    return (
-      <svg {...common}>
-        <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.6"/>
-        <circle cx="10" cy="12" r="1.4" fill="currentColor"/>
-        <circle cx="18" cy="12" r="1.4" fill="currentColor"/>
-        <path d="M9 17 Q 14 21 19 17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none"/>
-      </svg>
-    );
-  }
-  if (type === 'spiral') {
-    return (
-      <svg {...common}>
-        <path d="M14 14 m -2 0 a 2 2 0 1 1 4 0 a 4 4 0 1 1 -8 0 a 6 6 0 1 1 12 0 a 8 8 0 1 1 -16 0" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" fill="none"/>
-      </svg>
-    );
-  }
-  if (type === 'star') {
-    return (
-      <svg {...common}>
-        <path d="M14 3 L17 11 L25 12 L19 17 L21 25 L14 21 L7 25 L9 17 L3 12 L11 11 Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" fill="none"/>
-      </svg>
-    );
-  }
-  return null;
-}
 
 function Promise_({ vibe }) {
   return (
     <section id="promise" className={`kona-promise vibe-${vibe}`}>
-      <div className="kona-corner-mark kona-corner-mark--light" aria-hidden>
-        <img src="assets/kona-logo.png" alt=""/>
-      </div>
-      <div className="kona-promise__header">
-        <span className="kona-eyebrow kona-eyebrow--light">05 · Our word on it</span>
-        <h2 className="kona-promise__headline">The Kona Promise</h2>
-        <p className="kona-promise__sub">Four things we hold ourselves to, every time.</p>
+      <div className="kona-corner-mark" aria-hidden>
+        <img src="assets/kona-logo.png" alt="" />
       </div>
 
-      <div className="kona-promise__grid">
-        {PROMISES.map((p, i) => (
-          <article key={p.n} className="kona-promise__card" style={{ '--i': i }}>
-            <div className="kona-promise__card-top">
-              <span className="kona-promise__num">{p.n}</span>
-              <span className="kona-promise__icon"><PromiseIcon type={p.icon}/></span>
-            </div>
-            <h3 className="kona-promise__title">
-              {p.title.split('\n').map((line, j) => (
-                <span key={j}>{line}</span>
-              ))}
-            </h3>
-            <p className="kona-promise__detail">{p.detail}</p>
-            <div className="kona-promise__card-edge" />
-          </article>
-        ))}
+      <div className="kona-promise__layout">
+        {/* Left — full illustration */}
+        <div className="kona-promise__left">
+          <img
+            src="assets/promise-clean.png"
+            alt="A child playing with toys"
+            className="kona-promise__img"
+          />
+        </div>
+
+        {/* Right — header + list */}
+        <div className="kona-promise__right">
+          <span className="kona-eyebrow">04 · Our word on it</span>
+          <h2 className="kona-promise__headline">
+            The Kona<br/>Promise
+          </h2>
+          <p className="kona-promise__sub">Four things we hold ourselves to, every time.</p>
+
+          <ol className="kona-promise__list">
+            {PROMISES.map((p) => (
+              <li key={p.n} className="kona-promise__item">
+                <div className="kona-promise__item-badge" style={{ '--p-color': p.color }}>
+                  {p.icon}
+                </div>
+                <div className="kona-promise__item-body">
+                  <div className="kona-promise__item-num">{p.n}</div>
+                  <h3 className="kona-promise__item-title">{p.title}</h3>
+                  <p className="kona-promise__item-detail">{p.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

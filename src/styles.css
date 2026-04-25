@@ -1,6 +1,6 @@
 /* Kona — D2C home page stylesheet
-   Design system: Coral #E85D3A, Teal #0F8B6E, Amber #F5B731 on Cream #FAF7F2
-   Type: Fraunces (display serif), Instrument Sans (body), Caveat (handwritten)
+   Design system: Coral #C97356, Teal #0F8B6E, Amber #F5B731 on Cream #FAF7F2
+   Type: Instrument Serif (display), Instrument Sans (body), Caveat (handwritten)
 */
 
 :root {
@@ -39,10 +39,9 @@ body {
 }
 
 h1,h2,h3,h4 {
-  font-family: 'Fraunces', serif;
-  font-weight: 500;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
-  letter-spacing: -0.015em;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
   margin: 0;
   text-wrap: balance;
 }
@@ -52,19 +51,9 @@ button { font-family: inherit; cursor: pointer; }
 img { display: block; max-width: 100%; }
 
 /* ============ VIBE OVERRIDES ============ */
-/* Editorial cozy (default) — Fraunces display, cream background, soft */
-/* Playful tactile — bump up the wobble, handwritten accents, bolder strokes */
-.vibe-playful h1, .vibe-playful h2, .vibe-playful h3 {
-  font-family: 'Fredoka', 'Fraunces', serif;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-}
-.vibe-playful body { font-family: 'Nunito', 'Instrument Sans', sans-serif; }
-body.vibe-playful { font-family: 'Nunito', 'Instrument Sans', sans-serif; }
-
 /* Modern bold — tight grotesk */
 .vibe-modern h1, .vibe-modern h2, .vibe-modern h3 {
-  font-family: 'Instrument Serif', 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-weight: 400;
   letter-spacing: -0.025em;
 }
@@ -75,7 +64,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 11.5px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -253,7 +242,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   background: rgba(250,247,242,0.15);
   border: 1px solid rgba(250,247,242,0.3);
   border-radius: 100px;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -284,7 +273,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 .kona-hero__title-line-1 { display: block; font-style: italic; }
 .kona-hero__title-line-2 { display: block; }
 .kona-hero__lede {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: clamp(18px, 2vw, 22px);
   font-weight: 400;
   line-height: 1.5;
@@ -307,7 +296,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   transform: translateX(-50%);
   display: flex; flex-direction: column;
   align-items: center; gap: 8px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -657,7 +646,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   padding: 6px 12px 6px 8px;
   background: rgba(255,253,247,0.92);
   border-radius: 100px;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 10.5px;
   letter-spacing: 0.1em;
   color: var(--w-ink);
@@ -706,14 +695,14 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   flex: 1;
 }
 .kona-world-card__name {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 28px;
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.015em;
 }
 .kona-world-card__tag {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 15px;
   font-style: italic;
   line-height: 1.45;
@@ -735,13 +724,13 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   flex: 1;
 }
 .kona-world-card__stats .stat-num {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 20px;
   font-weight: 500;
   line-height: 1;
 }
 .kona-world-card__stats .stat-lbl {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 9.5px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -795,6 +784,41 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   background: var(--cream);
   padding: 140px 24px 140px;
 }
+
+/* New two-col Why layout */
+.kona-story__why {
+  max-width: 1100px;
+  margin: 0 auto 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.kona-story__why-left {
+  display: flex;
+  flex-direction: column;
+}
+.kona-story__why-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kona-story__why-img {
+  width: 100%;
+  max-width: 460px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+}
+@media (max-width: 900px) {
+  .kona-story__why {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .kona-story__why-right { order: -1; }
+  .kona-story__why-img { max-width: 100%; }
+}
+
 .kona-story__part--why {
   max-width: 1100px;
   margin: 0 auto 120px;
@@ -835,7 +859,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 }
 .kona-story__why-copy p { margin: 0 0 18px; }
 .kona-story__why-kicker {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-style: italic;
   font-size: 22px;
   color: var(--ink);
@@ -984,7 +1008,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   line-height: 1;
 }
 .kona-story__signature-role {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1007,7 +1031,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 10px;
   color: var(--ink-soft);
   opacity: 0.7;
@@ -1022,110 +1046,107 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 
 /* ============ PROMISE ============ */
 .kona-promise {
-  background: var(--coral);
-  color: var(--cream);
+  background: var(--cream-deep);
+  color: var(--ink);
   padding: 140px 24px 140px;
   position: relative;
   overflow: hidden;
 }
-.kona-promise::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(circle at 1px 1px, rgba(250,247,242,0.08) 1px, transparent 0);
-  background-size: 30px 30px;
-  pointer-events: none;
-}
-.kona-promise__header {
-  max-width: 800px;
-  margin: 0 auto 70px;
-  text-align: center;
-  position: relative;
-}
-.kona-promise__headline {
-  font-size: clamp(44px, 7vw, 88px);
-  font-style: italic;
-  line-height: 1;
-  margin-bottom: 18px;
-}
-.kona-promise__sub {
-  font-size: 19px;
-  opacity: 0.88;
-}
-.kona-promise__grid {
-  max-width: 1240px;
+
+/* Split layout: image left, list right */
+.kona-promise__layout {
+  max-width: 1160px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+.kona-promise__left {
   position: relative;
 }
-@media (max-width: 1024px) { .kona-promise__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .kona-promise__grid { grid-template-columns: 1fr; } }
-
-.kona-promise__card {
-  position: relative;
-  background: var(--cream);
-  color: var(--ink);
-  border-radius: var(--radius-lg);
-  padding: 32px 28px 36px;
-  min-height: 340px;
+.kona-promise__img {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
+  display: block;
+}
+.kona-promise__right {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  transition: transform 0.35s cubic-bezier(.2,.8,.2,1);
-  overflow: hidden;
 }
-.kona-promise__card:nth-child(1) { background: var(--cream); }
-.kona-promise__card:nth-child(2) { background: var(--amber-soft); }
-.kona-promise__card:nth-child(3) { background: #E7F4EE; }
-.kona-promise__card:nth-child(4) { background: #FFE0D3; }
-.kona-promise__card:hover { transform: translateY(-6px) rotate(-0.4deg); }
+.kona-promise__headline {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.02;
+  margin-bottom: 12px;
+}
+.kona-promise__sub {
+  font-size: 17px;
+  opacity: 0.75;
+  margin-bottom: 44px;
+  max-width: 480px;
+}
 
-.kona-promise__card-top {
+/* Promise list */
+.kona-promise__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 28px;
+}
+.kona-promise__item {
+  display: flex;
+  gap: 20px;
   align-items: flex-start;
 }
-.kona-promise__num {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  padding: 6px 10px;
-  background: rgba(30,30,30,0.08);
-  border-radius: 100px;
-}
-.kona-promise__icon { color: var(--coral); }
-.kona-promise__card:nth-child(2) .kona-promise__icon { color: #8E6300; }
-.kona-promise__card:nth-child(3) .kona-promise__icon { color: var(--teal-deep); }
-.kona-promise__card:nth-child(4) .kona-promise__icon { color: var(--coral-deep); }
-
-.kona-promise__title {
-  font-family: 'Fraunces', serif;
-  font-size: 26px;
-  font-weight: 500;
-  line-height: 1.1;
+.kona-promise__item-badge {
+  flex-shrink: 0;
+  width: 52px; height: 52px;
+  background: white;
+  border-radius: var(--radius-md);
   display: flex;
-  flex-direction: column;
-  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(30,30,30,0.07);
 }
-.kona-promise__title span:nth-child(2) { font-style: italic; opacity: 0.9; }
-.kona-promise__detail {
-  font-size: 15px;
+.kona-promise__item-body {
+  flex: 1;
+}
+.kona-promise__item-num {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  opacity: 0.45;
+  margin-bottom: 4px;
+}
+.kona-promise__item-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 5px;
+  color: var(--ink);
+}
+.kona-promise__item-detail {
+  font-size: 14.5px;
   line-height: 1.55;
   color: var(--ink-soft);
-  margin: 0 0 0;
-  margin-top: auto;
+  margin: 0;
+  opacity: 0.85;
 }
-.kona-promise__card-edge {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 5px;
-  background: var(--coral);
+
+@media (max-width: 900px) {
+  .kona-promise__layout {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .kona-promise__img { max-width: 500px; margin: 0 auto; }
 }
-.kona-promise__card:nth-child(2) .kona-promise__card-edge { background: var(--amber); }
-.kona-promise__card:nth-child(3) .kona-promise__card-edge { background: var(--teal); }
-.kona-promise__card:nth-child(4) .kona-promise__card-edge { background: var(--coral-deep); }
 
 /* ============ WAITLIST ============ */
 .kona-waitlist {
@@ -1185,7 +1206,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   font-size: 14px;
 }
 .kona-waitlist__counter-text strong {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 20px;
   font-weight: 500;
 }
@@ -1202,7 +1223,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 }
 .kona-field { display: flex; flex-direction: column; gap: 8px; }
 .kona-field__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1251,7 +1272,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 }
 .kona-waitlist__success-star { width: 60px; margin: 0 auto 18px; animation: kona-spin-slow 8s linear infinite; }
 .kona-waitlist__success h3 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 38px;
   font-style: italic;
   margin-bottom: 10px;
@@ -1293,7 +1314,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   opacity: 0.9;
 }
 .kona-footer__tagline {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-style: italic;
   font-size: 18px;
   opacity: 0.75;
@@ -1419,7 +1440,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 }
 .kona-world-card:hover .kona-world-card__curl-back-inner { transform: translateY(0); }
 .curl-eyebrow {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 11.5px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1483,7 +1504,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 }
 .kona-tweaks.is-open { display: block; }
 .kona-tweaks h4 {
-  font-family: 'Fraunces', serif;
+  font-family: 'Instrument Serif', serif;
   font-size: 16px;
   font-weight: 500;
   margin: 0 0 14px;
@@ -1498,7 +1519,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 .kona-tweaks__group { margin-bottom: 16px; }
 .kona-tweaks__group:last-child { margin-bottom: 0; }
 .kona-tweaks__label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Instrument Sans', sans-serif;
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1524,4 +1545,154 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   background: var(--coral);
   border-color: var(--coral);
   color: white;
+}
+
+/* ============ BLOG ============ */
+.kona-blog {
+  background: var(--cream);
+  padding: 140px 24px 120px;
+  position: relative;
+}
+.kona-blog__header {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+.kona-blog__headline {
+  font-size: clamp(40px, 6vw, 80px);
+  font-style: italic;
+  line-height: 1.02;
+  margin-bottom: 16px;
+}
+.kona-blog__sub {
+  font-size: 18px;
+  opacity: 0.7;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.kona-blog__grid {
+  max-width: 1240px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1024px) { .kona-blog__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .kona-blog__grid { grid-template-columns: 1fr; } }
+
+.kona-blog__footer {
+  text-align: center;
+}
+
+/* Blog card — mirrors world card structure */
+.kona-blog-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--b-paper, var(--cream-deep));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  color: var(--b-ink, var(--ink));
+  transition: transform 0.4s cubic-bezier(.2,.8,.2,1), box-shadow 0.4s;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.05), 0 10px 24px rgba(30,30,30,0.07);
+  border: 1px solid rgba(30,30,30,0.06);
+  text-decoration: none;
+}
+.kona-blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 2px 0 rgba(0,0,0,0.08), 0 24px 48px rgba(30,30,30,0.14);
+}
+
+.kona-blog-card__art {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: var(--b-paper, var(--cream-deep));
+  border-bottom: 1px solid rgba(30,30,30,0.07);
+}
+.kona-blog-card__art svg { width: 100%; height: 100%; display: block; }
+
+.kona-blog-card__badge {
+  position: absolute;
+  top: 14px; left: 14px;
+  padding: 6px 14px;
+  background: rgba(255,253,247,0.92);
+  border-radius: 100px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--b-ink, var(--ink));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(30,30,30,0.08);
+}
+
+.kona-blog-card__peek {
+  position: absolute;
+  bottom: 14px; right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  background: var(--b-ink, var(--ink));
+  color: var(--b-paper, var(--cream));
+  border-radius: 100px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s;
+}
+.kona-blog-card:hover .kona-blog-card__peek {
+  opacity: 1; transform: translateY(0);
+}
+
+.kona-blog-card__body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.kona-blog-card__title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.kona-blog-card__lede {
+  font-size: 14.5px;
+  line-height: 1.55;
+  opacity: 0.75;
+  margin: 0;
+  flex: 1;
+}
+.kona-blog-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  margin-top: 8px;
+  padding-top: 14px;
+  border-top: 1px dashed rgba(30,30,30,0.14);
+}
+.kona-blog-card__dot { opacity: 0.4; }
+
+/* Outline ink button (used in blog footer) */
+.kona-btn--outline-ink {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid rgba(30,30,30,0.25);
+}
+.kona-btn--outline-ink:hover {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+  transform: translateY(-2px);
 }

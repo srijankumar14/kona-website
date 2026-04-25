@@ -12,31 +12,31 @@ function Waitlist({ vibe }) {
     setState('submitting');
     setTimeout(() => {
       setState('done');
-      setCount(c => c + 1);
+      setCount((c) => c + 1);
     }, 700);
   };
 
   return (
     <section id="waitlist" className={`kona-waitlist vibe-${vibe}`}>
       <div className="kona-corner-mark kona-corner-mark--light" aria-hidden>
-        <img src="assets/kona-logo.png" alt=""/>
+        <img src="assets/kona-logo.png" alt="" />
       </div>
       <div className="kona-waitlist__inner">
         <div className="kona-waitlist__left">
           <span className="kona-eyebrow kona-eyebrow--light">06 · First dibs</span>
           <h2 className="kona-waitlist__headline">
-            We're almost ready.<br/>
+            We're almost ready.<br />
             <span className="kona-waitlist__headline-accent">Are you?</span>
           </h2>
-          <p className="kona-waitlist__sub">
-            Waitlist families get early access. That's it.
+          <p className="kona-waitlist__sub">Waitlist families get early access.
+
           </p>
 
           <div className="kona-waitlist__counter">
             <div className="kona-waitlist__counter-dots">
-              {Array.from({length: 7}).map((_, i) => (
-                <span key={i} className="dot" style={{ animationDelay: `${i*0.15}s` }} />
-              ))}
+              {Array.from({ length: 7 }).map((_, i) =>
+              <span key={i} className="dot" style={{ animationDelay: `${i * 0.15}s` }} />
+              )}
             </div>
             <div className="kona-waitlist__counter-text">
               <strong>{count.toLocaleString()}</strong> families waiting
@@ -45,21 +45,21 @@ function Waitlist({ vibe }) {
         </div>
 
         <div className="kona-waitlist__right">
-          {state !== 'done' ? (
-            <form className="kona-waitlist__form" onSubmit={onSubmit}>
+          {state !== 'done' ?
+          <form className="kona-waitlist__form" onSubmit={onSubmit}>
               <label className="kona-field">
                 <span className="kona-field__label">Your email</span>
                 <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="you@home.com"
-                />
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@home.com" />
+              
               </label>
               <label className="kona-field">
                 <span className="kona-field__label">Your child's age <em>(optional)</em></span>
-                <select value={age} onChange={e => setAge(e.target.value)}>
+                <select value={age} onChange={(e) => setAge(e.target.value)}>
                   <option value="">Select an age</option>
                   <option>Under 3</option>
                   <option>3–4</option>
@@ -68,23 +68,23 @@ function Waitlist({ vibe }) {
                   <option>9+</option>
                 </select>
               </label>
-              <button type="submit" className="kona-btn kona-btn--cream kona-btn--full" disabled={state==='submitting'}>
+              <button type="submit" className="kona-btn kona-btn--cream kona-btn--full" disabled={state === 'submitting'}>
                 {state === 'submitting' ? 'Saving your spot…' : 'Join the waitlist'}
-                {state !== 'submitting' && (
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                    <path d="M3 8h10M8.5 3.5L13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                {state !== 'submitting' &&
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                    <path d="M3 8h10M8.5 3.5L13 8l-4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                )}
+              }
               </button>
               <p className="kona-waitlist__legal">
                 No spam. Unsubscribe anytime. Just Kona, when we have news.
               </p>
-            </form>
-          ) : (
-            <div className="kona-waitlist__success">
+            </form> :
+
+          <div className="kona-waitlist__success">
               <div className="kona-waitlist__success-star">
                 <svg viewBox="0 0 40 40" fill="none">
-                  <path d="M20 3 L24 16 L37 20 L24 24 L20 37 L16 24 L3 20 L16 16 Z" fill="#F5B731"/>
+                  <path d="M20 3 L24 16 L37 20 L24 24 L20 37 L16 24 L3 20 L16 16 Z" fill="#F5B731" />
                 </svg>
               </div>
               <h3>You're in.</h3>
@@ -94,11 +94,11 @@ function Waitlist({ vibe }) {
               </p>
               <p className="kona-waitlist__success-sig">— Anika & team</p>
             </div>
-          )}
+          }
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 }
 
 function Footer({ vibe }) {
@@ -120,8 +120,8 @@ function Footer({ vibe }) {
           <a href="#">kona-store.com</a>
         </div>
       </div>
-    </footer>
-  );
+    </footer>);
+
 }
 
 window.Waitlist = Waitlist;
