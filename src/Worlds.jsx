@@ -76,6 +76,15 @@ function WorldArt({ scene, color, ink, paper, paperDeep }) {
   }
     if (scene === 'dinos') {
     return (
+      <img
+        src="assets/world-dinos.png"
+        alt="Dinosaurs"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+      />
+    );
+  }
+  if (scene === 'dinos-svg') {
+    return (
       <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden>
         <defs>
           <linearGradient id="d-sky" x1="0" x2="0" y1="0" y2="1">
@@ -141,6 +150,15 @@ function WorldArt({ scene, color, ink, paper, paperDeep }) {
 
   }
   if (scene === 'vehicles') {
+    return (
+      <img
+        src="assets/world-vehicles.png"
+        alt="Vehicles"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+      />
+    );
+  }
+  if (scene === 'vehicles-svg') {
     return (
       <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden>
         <defs>
