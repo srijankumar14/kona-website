@@ -18,30 +18,14 @@ function Waitlist({ vibe }) {
 
   return (
     <section id="waitlist" className={`kona-waitlist vibe-${vibe}`}>
-      <div className="kona-corner-mark kona-corner-mark--light" aria-hidden>
-        <img src="assets/kona-logo.png" alt="" />
-      </div>
       <div className="kona-waitlist__inner">
         <div className="kona-waitlist__left">
-          <span className="kona-eyebrow kona-eyebrow--light">06 · First dibs</span>
+          <span className="kona-eyebrow">06 · First dibs</span>
           <h2 className="kona-waitlist__headline">
             We're almost ready.<br />
             <span className="kona-waitlist__headline-accent">Are you?</span>
           </h2>
-          <p className="kona-waitlist__sub">Waitlist families get early access.
-
-          </p>
-
-          <div className="kona-waitlist__counter">
-            <div className="kona-waitlist__counter-dots">
-              {Array.from({ length: 7 }).map((_, i) =>
-              <span key={i} className="dot" style={{ animationDelay: `${i * 0.15}s` }} />
-              )}
-            </div>
-            <div className="kona-waitlist__counter-text">
-              <strong>{count.toLocaleString()}</strong> families waiting
-            </div>
-          </div>
+          <p className="kona-waitlist__sub">Waitlist families get early access.</p>
         </div>
 
         <div className="kona-waitlist__right">
