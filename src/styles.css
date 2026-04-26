@@ -1282,12 +1282,29 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 }
 
 @media (max-width: 900px) {
-  .kona-waitlist__inner {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 60px 24px 80px;
+  .kona-waitlist {
+    min-height: auto;
+    background-position: right center;
   }
-  .kona-waitlist__right { padding-top: 0; }
+  .kona-waitlist__inner {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 24px 80px;
+    gap: 32px;
+  }
+  .kona-waitlist__left {
+    position: static;
+    max-width: 100%;
+    text-align: center;
+  }
+  .kona-waitlist__sub { max-width: 100%; }
+  .kona-waitlist__right {
+    position: static;
+    width: 100%;
+    max-width: 400px;
+  }
 }
 
 /* ============ FOOTER ============ */
