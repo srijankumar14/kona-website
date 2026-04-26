@@ -1284,7 +1284,8 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 @media (max-width: 900px) {
   .kona-waitlist {
     min-height: auto;
-    background-position: right center;
+    background-image: url('../assets/waitlist-bg-mobile.png');
+    background-position: center top;
   }
   .kona-waitlist__inner {
     min-height: auto;
