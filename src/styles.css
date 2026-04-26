@@ -1299,6 +1299,11 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
     position: static;
     max-width: 100%;
     text-align: center;
+    background: rgba(255, 245, 224, 0.82);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 24px 28px;
   }
   .kona-waitlist__sub { max-width: 100%; }
   .kona-waitlist__right {
