@@ -562,7 +562,7 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
 
 /* ============ WORLDS ============ */
 .kona-worlds {
-  background: rgb(250, 197, 128);
+  background: #f5c97a url('../assets/worlds-bg.png') center center / cover no-repeat;
   color: var(--ink);
   padding: 140px 24px 140px;
   position: relative;
@@ -607,7 +607,10 @@ body.vibe-modern { font-family: 'Instrument Sans', sans-serif; }
   position: relative;
 }
 @media (max-width: 1024px) { .kona-worlds__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 560px) { .kona-worlds__grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .kona-worlds__grid { grid-template-columns: 1fr; }
+  .kona-worlds { background-image: url('../assets/worlds-bg-mobile.png'); background-position: center top; }
+}
 
 .kona-world-card {
   display: flex;
